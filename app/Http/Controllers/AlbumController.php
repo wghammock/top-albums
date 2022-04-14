@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class AlbumController extends Controller
 {
@@ -14,6 +15,8 @@ class AlbumController extends Controller
     public function index()
     {
         //
+        $response = Http::get('https://itunes.apple.com/us/rss/topalbums/limit=100/json');
+        dd($response);
     }
 
     /**
