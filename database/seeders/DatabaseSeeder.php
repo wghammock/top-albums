@@ -7,6 +7,10 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+
+    // prevent models from dispatching events
+    use WithoutModelEvents;
+
     /**
      * Seed the application's database.
      *
@@ -14,6 +18,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            UserSeeder::class,
+        ]);
     }
 }
