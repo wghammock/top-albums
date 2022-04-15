@@ -19,6 +19,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// http://localhost/api
+Route::get('/', function () {
+        dd('here');
+});
+
 
 Route::controller(AlbumController::class)->group(function () {
     Route::get('/albums', 'index');

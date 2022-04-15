@@ -14,9 +14,11 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        //
-        $response = Http::get('https://itunes.apple.com/us/rss/topalbums/limit=100/json');
-        dd($response);
+        //TODO add checks for status 400/404/500, failed calls etc.
+        return Http::retry(3, 100)->get('https://itunes.apple.com/us/rss/topalbums/limit=100/json')->throw(function ($response, $e) {
+            //
+        })->json();
+        
     }
 
     /**

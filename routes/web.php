@@ -27,3 +27,9 @@ Route::middleware([
     })->name('dashboard');
 });
 
+// Handle bad request so we can catch and fix
+// where people are falling through the cracks
+Route::fallback(function () {
+    // log the bad request
+    // redirct to the custom 404 page
+});

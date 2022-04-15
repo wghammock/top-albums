@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,6 +17,9 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        // Truncate any existing records to start from scratch.
+        User::truncate();
+
         DB::table('users')->insert([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
