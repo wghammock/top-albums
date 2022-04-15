@@ -4,3 +4,5 @@ if (! function_exists('env')) {
         // ...
     }
 }
+
+//TODO helpers for logging/ papertrail etc.
