@@ -5,7 +5,7 @@ retrieve the different albums we want to showcase on our website. We can leverag
 album library to help populate our own inventory.
 
 ## Instructions - Set Up
-For the purposes of this documentation is assumed that you are running Unutu. Before getting 
+For the purposes of this documentation is assumed that you are running Ubuntu. Before getting 
 started, please ensure your system has composer and docker installed.
 
 NOTE:: It may be neccessary to turn off any services blocking ports.
@@ -15,9 +15,12 @@ sudo service postgresql stop
 
 ## Instructions - Running
 
+In a terminal, cd to the prject folder and run the following commands
+
 • $ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
-• $ sail up
+• $ sail up -d
 • $ sail artisan migrate
+• $ sail  artisan db:seed (OPTIONAL - see below)
 
 Quick Start
 Use the artisan seed command to get started quickly and create an admin user without needing to register
