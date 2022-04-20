@@ -29,4 +29,5 @@ Route::controller(AlbumController::class)->group(function () {
     Route::get('/albums', 'index');
     // Route::get('/albums/{id}', 'show');
     // Route::post('/albums', 'store');
+    // delete etc :)
 });

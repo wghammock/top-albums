@@ -169,6 +169,14 @@
             margin-left: 3rem
         }
 
+        .mb-4 {
+            margin-top: 1rem
+        }
+
+        .mb-6 {
+            margin-top: 1.5rem
+        }
+
         .-mt-px {
             margin-top: -1px
         }
@@ -405,6 +413,17 @@
         body {
             font-family: 'Nunito', sans-serif;
         }
+        #api-documentation p {
+            margin-top: .25em;
+            margin-bottom: .25em;
+        }
+        #albums-list .album-list-item .album-list-heading {
+            background-color: #efefef;
+        }
+        #albums-list .album-info p {
+            margin-top: .25em;
+            margin-bottom: .25em;
+        }
     </style>
 </head>
 
@@ -447,8 +466,10 @@
                         </div>
 
                         <div class="ml-12">
-                            <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+                            <div id="api-documentation" class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <p>PATH: /api/albums</p>
+                                <p>Method: Get</p>
+                                <p>Returns a list of top albums, limit 100</p>
                             </div>
                         </div>
                     </div>
@@ -456,25 +477,10 @@
             </div>
 
             <div class="mt-6 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-1">
+                <div class="grid grid-cols-1 md:grid-cols-1">
                     <div class="p-6">
-                        Place albums list here
 
-
-                        <table class="table table-inverse">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($albums as $album)
-                                <tr>
-                                    <td>{{$album['title']['label']}}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        <x-albums :albums="$albums" />
 
                     </div>
                 </div>
@@ -487,10 +493,10 @@
 
                 <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                     Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>

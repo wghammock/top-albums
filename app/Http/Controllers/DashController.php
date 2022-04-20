@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
+// use App\Models\Album;  <-- Next steps
 
-// TEST
-// use App\Models\Album;
 use Illuminate\Support\Facades\Http;
-
-
 use Illuminate\Http\Request;
+use App\Http\Controllers\AlbumController;
 
 class DashController extends Controller
 {
@@ -19,32 +17,32 @@ class DashController extends Controller
      */
     public function index()
     {
-        // TEST TEST
-        $albumsJSON =  Http::retry(3, 100)->get('https://itunes.apple.com/us/rss/topalbums/limit=100/json')->throw(function ($response, $e) {
-            //
-        })->json();
-
-
+       
         // TESTING =========================================
-        // dd($albumsJSON);
+         // API CALL
+        // $albumsJSON =  Http::retry(3, 100)->get('https://itunes.apple.com/us/rss/topalbums/limit=100/json')->throw(function ($response, $e) {
+            //
+        // })->json();
         // dd($albumsJSON['feed']['entry']);
+        // TESTING =========================================
+        
 
+        $albumsJSON = AlbumController::index();
         $albums = $albumsJSON['feed']['entry'];
 
         return view('welcome', [
-             'albums' => $albums
+            'albums' => $albums
         ]);
 
-        // return view('welcome')->with('albums', $albums);
 
 
-        // TESTING =========================================
-
+        // Developer Notes - 
+        // The Next step would be to persist to the DB and use DB results vs pinging the API
 
         // return view('welcome', [
         //     'albums' => Album::all()
         // ]);
 
-        
+
     }
 }
