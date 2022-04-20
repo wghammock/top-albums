@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('albums', function (Blueprint $table) {
             $table->id();
-            $table->jsonb('attributes');
+            $table->jsonb('entry');
             $table->timestamps();
         });
     }
