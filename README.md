@@ -17,14 +17,14 @@ sudo service postgresql stop
 
 In a terminal, cd to the prject folder and run the following commands
 
-• $ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
-• $ sail up -d
-• $ sail artisan migrate
-• $ sail  artisan db:seed (OPTIONAL - see below)
+*  $ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+*  $ sail up -d
+*  $ sail artisan migrate
+*  $ sail  artisan db:seed (OPTIONAL - see below)
 
 Quick Start
 Use the artisan seed command to get started quickly and create an admin user without needing to register
-• $ sail artisan db:seed
+*  $ sail artisan db:seed
 User: admin@admin.com
 Pass: #nAxFG3cs%W4He657t&TntWCy
 
@@ -33,10 +33,10 @@ Pass: #nAxFG3cs%W4He657t&TntWCy
 Create an API endpoint that can retrieve the top 100 albums based on the json feed here:
 https://itunes.apple.com/us/rss/topalbums/limit=100/json
 
-• A clean & modern RESTful API architecture for retrieving the top 100 albums
-• Clean, readable, maintainable codebase
-• Code can be written in any language, but preferably in PHP
-• Host source code on GitHub
+*  A clean & modern RESTful API architecture for retrieving the top 100 albums
+*  Clean, readable, maintainable codebase
+*  Code can be written in any language, but preferably in PHP
+*  Host source code on GitHub
 
 ## Built in Laravel
 
